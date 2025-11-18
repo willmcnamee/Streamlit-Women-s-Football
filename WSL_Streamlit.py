@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("C:\\Users\\Willm\\MSc\\Workshops\\8\\ewf_matches.csv")
+df = pd.read_csv("ewf_matches.csv")
 
 df["total_goals"] = df["home_team_score"] + df["away_team_score"]
 
@@ -38,7 +38,7 @@ st.bar_chart(avg_att_df, x="season", y="attendance")
 #st.line_chart(avg_g_df, x="season", y="total_goals")
 
 # filter
-df2 = pd.read_csv("C:\\Users\\Willm\\MSc\\Workshops\\8\\ewf_standings.csv")
+df2 = pd.read_csv("ewf_standings.csv")
 
 st.write("Total points in the WSL since 2010/11")
 
@@ -62,4 +62,7 @@ total_points_df = total_points_df[["Rank", "team_name", "points"]]
 total_points_df = total_points_df.reset_index(drop=True)
 
 st.table(total_points_df)
+
+
+
 
